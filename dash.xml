@@ -1,0 +1,31 @@
+<dashboard script="checkbox.js" stylesheet="checkbox.css">
+<label>Teste </label>
+<row>
+<panel>
+<table id="myTable">
+<title>My Table</title>
+<search>
+<query>index=_internal | stats count by sourcetype | eval teste=sourcetype</query>
+<earliest>-15m</earliest>
+<latest>now</latest>
+</search>
+<option name="count">10</option>
+<option name="drilldown">row</option>
+<option name="refresh.display">progressbar</option>
+<drilldown>
+<condition field="*"></condition>
+</drilldown>
+</table>
+</panel>
+</row>
+<row>
+<panel>
+<html>
+<div>
+<input type="button" id="mybutton" value="My Button"/>
+</div>
+</html>
+</panel>
+</row>
+
+</dashboard>
